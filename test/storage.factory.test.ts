@@ -1,4 +1,4 @@
-import { storageFactory, SimpleStorage } from 'react-clean-toolkit';
+import { storageFactory, SimpleStorage } from 'clean-toolkit';
 import { makeNumberArray, timeout } from '../util';
 
 function createMockStorage(): Storage {

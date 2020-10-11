@@ -1,5 +1,5 @@
 {
-  "name": "react-clean-toolkit",
+  "name": "clean-toolkit",
   "version": "0.1.0",
   "description": "dd",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thesoncriel/react-clean-toolkit.git"
+    "url": "git+https://github.com/thesoncriel/clean-toolkit.git"
   },
   "keywords": [
     "react",
@@ -21,9 +21,9 @@
   "author": "TheSON",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thesoncriel/react-clean-toolkit/issues"
+    "url": "https://github.com/thesoncriel/clean-toolkit/issues"
   },
-  "homepage": "https://github.com/thesoncriel/react-clean-toolkit#readme",
+  "homepage": "https://github.com/thesoncriel/clean-toolkit#readme",
   "dependencies": {
     "axios": "^0.20.0",
     "lodash-es": "^4.17.15",

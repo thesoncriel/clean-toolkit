@@ -7,8 +7,8 @@
     "target": "es5",
     "baseUrl": "../",
     "paths": {
-      "react-clean-toolkit": ["src/index"],
-      "react-clean-toolkit/models": ["src/models/index"]
+      "clean-toolkit": ["src/index"],
+      "clean-toolkit/models": ["src/models/index"]
     }
   }
 }
