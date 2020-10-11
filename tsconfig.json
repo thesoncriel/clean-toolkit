@@ -1,0 +1,21 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts", "**/*.test.tsx"],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "declaration": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "module": "esnext",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "react-clean-toolkit": ["src/index"],
+      "react-clean-toolkit/models": ["src/models/index"]
+    }
+  }
+}
