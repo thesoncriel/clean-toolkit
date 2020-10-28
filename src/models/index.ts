@@ -4,3 +4,4 @@ export * from './events.model';
 export * from './http.model';
 export * from './setting.model';
 export * from './sns.model';
+export * from './tracking.model';
