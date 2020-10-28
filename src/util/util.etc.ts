@@ -112,6 +112,56 @@ export function timeout<T = void>(
 }
 
 /**
+ * 특정 url 을 보이지 않는 임시 iframe 에 설정한다.
+ *
+ * 주로 인앱 브라우저에서 네이티브앱의 특정 기능을 수행할 때 쓰인다.
+ *
+ * 2초 뒤엔 만들어진 iframe 을 자동으로 제거한다.
+ * @param url 수행될 url
+ * @returns 함수를 반환한다. 이 함수는 만들어진 iframe 을 즉시 제거한다.
+ */
+export function setUrlToTemporaryIframe(url: string, id = 'iframe_temp') {
+  if (isServer() || !url) {
+    return nop;
+  }
+  let oldElem = document.getElementById(id);
+
+  if (oldElem) {
+    document.body.removeChild(oldElem);
+    oldElem = null;
+  }
+  const elem = document.createElement('iframe');
+
+  elem.setAttribute('sandbox', 'allow-same-origin');
+  elem.setAttribute('title', id);
+  elem.setAttribute('id', id);
+  elem.setAttribute('style', 'display: none; opacity: 0; visibility: hidden');
+  elem.setAttribute('src', url);
+
+  document.body.appendChild(elem);
+
+  let fnClose: () => void;
+  const retFn = () => {
+    try {
+      document.body.removeChild(elem);
+    } catch (error) {
+      //
+    }
+    try {
+      fnClose();
+    } catch (error) {
+      //
+    }
+  };
+
+  timeout(2000, 0, (close) => (fnClose = close))
+    .then(retFn)
+    .catch(nop);
+
+  return retFn;
+}
+
+/**
  * 콘솔로그 대체 함수.
  * @param args
  */
